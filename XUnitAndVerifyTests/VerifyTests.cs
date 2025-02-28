@@ -1,5 +1,6 @@
 using XUnitAndVerifyTests.Data;
 using XUnitAndVerifyTests.Entities;
+using XUnitAndVerifyTests.Extensions;
 
 namespace XUnitAndVerifyTests;
 

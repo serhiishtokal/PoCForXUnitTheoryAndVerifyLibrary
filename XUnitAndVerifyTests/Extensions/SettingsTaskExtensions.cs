@@ -1,6 +1,6 @@
 ﻿using XUnitAndVerifyTests.Entities;
 
-namespace XUnitAndVerifyTests;
+namespace XUnitAndVerifyTests.Extensions;
 
 public static class SettingsTaskExtensions
 {
