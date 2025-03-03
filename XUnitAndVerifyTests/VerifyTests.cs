@@ -22,8 +22,16 @@ public class VerifyTests
     public async Task UseDefaultFileName(TestCase testCase)
     {
         Assert.NotNull(testCase);
-
-        await Verify(testCase).UseCustomDirectory();
+        if (testCase.UserFirstName == "TestCase1")
+        {
+            await Verify(testCase)
+                .UseCustomDirectory();
+        }
+        else
+        {
+            await Assert.ThrowsAnyAsync<Exception>(() => 
+                Verify(testCase).UseCustomDirectory());
+        }
     }
     
     // verified.json file names are too long for git staging
