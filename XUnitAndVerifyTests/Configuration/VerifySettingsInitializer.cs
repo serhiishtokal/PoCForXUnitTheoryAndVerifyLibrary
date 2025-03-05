@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using DiffEngine;
 
 namespace XUnitAndVerifyTests.Configuration;
 
@@ -8,6 +9,9 @@ public static class VerifySettingsInitializer
     public static void Initialize()
     {
         VerifierSettings.UseStrictJson();
-        VerifierSettings.AutoVerify();
+        DiffRunner.Disabled= true;
+        
+        // DiffTools.
+        // VerifierSettings.AutoVerify();
     }
 }
