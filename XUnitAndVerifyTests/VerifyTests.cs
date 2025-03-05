@@ -7,13 +7,13 @@ namespace XUnitAndVerifyTests;
 public class VerifyTests
 {
     [Theory]
-    [ClassData(typeof(TestCasesTheoryData))]
-    public async Task UseCustomFileNameExtension(TestCase testCase)
+    [ClassData(typeof(TestItemTheoryData))]
+    public async Task UseCustomFileNameExtension(TestItem testItem)
     {
-        Assert.NotNull(testCase);
-        await Verify(testCase)
+        Assert.NotNull(testItem);
+        await Verify(testItem)
             .UseCustomDirectory()
-            .UseCustomFileName(testCase);
+            .UseCustomFileName(testItem);
     }
     
     //////// VERIFY ASSERTING ////////
@@ -25,11 +25,11 @@ public class VerifyTests
     // limit is 260 characters
     // https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows#:~:text=Git%20has%20a%20limit%20of,260%20characters%20for%20a%20filename.
     [Theory]
-    [ClassData(typeof(TestCasesTheoryData))]
-    public async Task UseDefaultFileName(TestCase testCase)
+    [ClassData(typeof(TestItemTheoryData))]
+    public async Task UseDefaultFileName(TestItem testItem)
     {
-        Assert.NotNull(testCase);
-        await Verify(testCase)
+        Assert.NotNull(testItem);
+        await Verify(testItem)
             .UseCustomDirectory();
     }
     
@@ -62,15 +62,15 @@ public class VerifyTests
     
     // verified.json file names are too long for git staging
     [Theory]
-    [ClassData(typeof(TestCasesTheoryData))]
-    public async Task UseParameters(TestCase testCase)
+    [ClassData(typeof(TestItemTheoryData))]
+    public async Task UseParameters(TestItem testItem)
     {
-        var isRecord = RecordSerializer.IsRecordType(typeof(TestCase));
+        var isRecord = RecordSerializer.IsRecordType(typeof(TestItem));
         Assert.True(isRecord);
-        Assert.NotNull(testCase);
+        Assert.NotNull(testItem);
 
-        await Verify(testCase)
+        await Verify(testItem)
             .UseCustomDirectory()
-            .UseParameters(testCase);
+            .UseParameters(testItem);
     }
 }

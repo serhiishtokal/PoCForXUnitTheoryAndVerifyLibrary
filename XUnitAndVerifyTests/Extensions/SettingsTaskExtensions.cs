@@ -4,9 +4,9 @@ namespace XUnitAndVerifyTests.Extensions;
 
 public static class SettingsTaskExtensions
 {
-    public static SettingsTask UseCustomFileName(this SettingsTask settingsTask, TestCase testCase)
+    public static SettingsTask UseCustomFileName(this SettingsTask settingsTask, TestItem testItem)
     {
-        var shortHash = ComputeShortHash(testCase.ToString());
+        var shortHash = ComputeShortHash(testItem.ToString());
         return settingsTask.UseTextForParameters(shortHash);
     }
     

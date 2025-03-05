@@ -4,7 +4,7 @@ namespace XUnitAndVerifyTests.Data;
 
 public static class TestsDataConstants
 {
-    public static readonly IEnumerable<TestCase> TestItems =
+    public static readonly IEnumerable<TestItem> TestItems =
     [
         new("Test1", new NestedData(1, "Descr1")),
         new("Test2", new NestedData(2, "Descr2")),

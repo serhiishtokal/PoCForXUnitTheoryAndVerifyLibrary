@@ -2,13 +2,13 @@ using XUnitAndVerifyTests.Entities;
 
 namespace XUnitAndVerifyTests.Data;
 
-public class TestCasesTheoryData : TheoryData<TestCase>
+public class TestItemTheoryData : TheoryData<TestItem>
 {
-    public TestCasesTheoryData()
+    public TestItemTheoryData()
     {
         foreach (var testCase in TestsDataConstants.TestItems)
         {
-            var theoryDataRow = new TheoryDataRow<TestCase>(testCase)
+            var theoryDataRow = new TheoryDataRow<TestItem>(testCase)
             {
                 TestDisplayName = $"Custom: {testCase.UserFirstName} {testCase.NestedData.Id}"
             };
